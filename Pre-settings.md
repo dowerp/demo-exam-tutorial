@@ -1,5 +1,17 @@
 ## [HQ-RTR]
 
+### Создание интерфейсов VLAN
+```bash
+interface vl120
+ ip address 10.10.100.1
+ interface vl220
+ ip address 10.10.200.1
+ interface vl888
+ ip address 10.10.30.1
+end
+write memory
+```
+
 ### Привязка VLAN-интерфейсов к физическим интерфейсам
 
 ```bash

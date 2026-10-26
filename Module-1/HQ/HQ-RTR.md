@@ -92,4 +92,20 @@ ip nat inside
 exit 
 ip nat pool HQ 10.10.0.1-10.10.200.254 
 ip nat source dynamic inside-to-outside pool HQ overload interface isp
+end
+wr
+```
+## 7. Настройка timzone
+```bash
+ntp timezone utc+3
+end
+write memory
+```
+## Команды если требуется проверить
+```bash
+show ip interface brief // Проверка состояния сетевых интерфейсов
+show interface tunnel.0 // Проверка состояния GRE-туннеля
+show ip route // Проверка таблицы маршрутизации
+show ip nat translations // Просмотр таблицы активных трансляций NAT
+show dhcp-server 1 detailed // Проверка параметров встроенного сервера DHCP
 ```

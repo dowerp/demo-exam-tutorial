@@ -78,6 +78,7 @@ wr
 ```
 ## 6. Настройка NAT
 ```bash
+conf t
 interface isp 
 ip nat outside 
 exit 
@@ -97,11 +98,12 @@ wr
 ```
 ## 7. Настройка timzone
 ```bash
+conf t
 ntp timezone utc+3
 end
 write memory
 ```
-## Команды если требуется проверить
+## Команды если требуется проверить (только в привилегированном режиме)
 ```bash
 show ip interface brief // Проверка состояния сетевых интерфейсов
 show interface tunnel.0 // Проверка состояния GRE-туннеля
@@ -109,3 +111,4 @@ show ip route // Проверка таблицы маршрутизации
 show ip nat translations // Просмотр таблицы активных трансляций NAT
 show dhcp-server 1 detailed // Проверка параметров встроенного сервера DHCP
 ```
+# Всегда сохраняем настройки end > wr

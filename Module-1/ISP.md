@@ -99,20 +99,11 @@ SYSTEMD_CONTROLLED=no
 ```bash
 apt-get install iptables
 ```
-### Включение маскарадинга (PAT) на исходящем интерфейсе ens3
+### Теперь сама настройка
 ```bash
 iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE 
-```
-### Сохранение текущих правил iptables в файл конфигурации
-```bash
 iptables-save >> /etc/sysconfig/iptables 
-```
-### Активация автозапуска и немедленный старт службы iptables
-```bash
 systemctl enable --now iptables
-```
-### Активация автозапуска и немедленный старт службы iptables
-```bash
 iptables -t nat -L
 ```
 # Обязательно в конце пишем systemctl restart network

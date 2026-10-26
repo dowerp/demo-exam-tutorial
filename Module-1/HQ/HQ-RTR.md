@@ -76,4 +76,20 @@ ip ospf message-digest-key 1 md5 P@ssword
 end
 wr
 ```
-## Настройка 
+## 6. Настройка NAT
+```bash
+interface isp 
+ip nat outside 
+exit 
+interface vl100
+ip nat inside 
+exit 
+interface vl200 
+ip nat inside 
+exit 
+interface vl999 
+ip nat inside 
+exit 
+ip nat pool HQ 10.10.0.1-10.10.200.254 
+ip nat source dynamic inside-to-outside pool HQ overload interface isp
+```

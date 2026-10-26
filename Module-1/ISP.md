@@ -63,7 +63,7 @@ SYSTEMD_CONTROLLED=no
 #### Файл options
 Копируем options из каталога ens3
 ```bash
-mkdir /etc/net/ifaces/ens4
+mkdir /etc/net/ifaces/ens5
 cp /etc/net/ifaces/ens3/options /etc/net/ifaces/ens5/
 ```
 Содержимое options

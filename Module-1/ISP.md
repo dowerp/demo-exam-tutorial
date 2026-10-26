@@ -1,9 +1,11 @@
 # Настройка ISP
+
 ## 1. Настройка имени
 ```bash
 hostnamectl set-hostname isp.au-team.irpo
 exec bash
 ```
+
 ## 2. Настройка времени
 ```bash
 timedatectl
@@ -12,6 +14,7 @@ timedatectl
 ```bash
 timedatectl set-timezone Europe/Moscow
 ```
+
 ## 3. Настройка IP-адресов
 ### Проверка IP
 ```bash
@@ -78,8 +81,25 @@ SYSTEMD_CONTROLLED=no
 ```text
 172.16.2.1/28
 ```
+
 ## 4. Настройка iptables
 Если его нет то
 ```bash
 apt-get install iptables
+```
+### Включение маскарадинга (PAT) на исходящем интерфейсе ens3
+```bash
+iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE 
+```
+### Сохранение текущих правил iptables в файл конфигурации
+```bash
+iptables-save >> /etc/sysconfig/iptables 
+```
+### Активация автозапуска и немедленный старт службы iptables
+```bash
+systemctl enable --now iptables
+```
+### Активация автозапуска и немедленный старт службы iptables
+```bash
+iptables -t nat -L
 ```

@@ -1,5 +1,7 @@
 # Настройка ISP
 
+# Обязательно в конце пишем systemctl restart network
+
 ## 1. Настройка имени
 ```bash
 hostnamectl set-hostname isp.au-team.irpo
@@ -113,3 +115,4 @@ systemctl enable --now iptables
 ```bash
 iptables -t nat -L
 ```
+# Обязательно в конце пишем systemctl restart network

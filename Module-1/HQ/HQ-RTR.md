@@ -52,9 +52,9 @@ wr
 ```
 ## 4. Настройка туннеля GRE
 ```bash
-interface tunnel.0 // Создание логического туннельного интерфейса tunnel.0
-ip address 10.10.10.1/30 // Назначение IP-адреса туннеля со стороны HQ
-ip tunnel 172.16.1.2 172.16.2.2 mode gre // Настройка инкапсуляции GRE с внешнего адреса HQ на внешний адрес BR
+interface tunnel.0 
+ip address 10.10.10.1/30 
+ip tunnel 172.16.1.2 172.16.2.2 mode gre
 end
 wr
 ```

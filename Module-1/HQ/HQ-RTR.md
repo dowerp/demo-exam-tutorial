@@ -162,6 +162,6 @@ show ip interface brief // Проверка состояния сетевых и
 show interface tunnel.0 // Проверка состояния GRE-туннеля
 show ip route // Проверка таблицы маршрутизации
 show ip nat translations // Просмотр таблицы активных трансляций NAT
-show dhcp-server 1 detailed // Проверка параметров встроенного сервера DHCP
+show dhcp-server 1 detailed (или 2)// Проверка параметров встроенного сервера DHCP
 ```
 # Всегда сохраняем настройки end > wr

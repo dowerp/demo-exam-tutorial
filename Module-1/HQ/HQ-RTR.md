@@ -31,11 +31,11 @@ wr
 ```bash
 conf t
 interface vl100
- ip address 10.10.100.1
+ ip address 10.10.100.1/27
  interface vl200
- ip address 10.10.200.1
+ ip address 10.10.200.1/28
  interface vl999
- ip address 10.10.30.1
+ ip address 10.10.30.1/29
 end
 wr
 ```

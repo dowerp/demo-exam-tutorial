@@ -5,29 +5,27 @@
 ## О репозитории
 В репозитории собраны проверенные команды и разборы конфигурационных файлов для операционных систем **ALT Linux** (Alt Server) и маршрутизаторов **EcoRouter** (EcoRouterOS). Материал структурирован по модулям и конкретным устройствам топологии экзамена, чтобы не тратить время на поиск синтаксиса и отладку типовых ошибок в процессе выполнения заданий.
 
----
+# Начало с [ISP.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/ISP.md)
 
-## Структура материалов
 
-```text
-📦 demo-exam-tutorial
-├── 📂 Module-1                # Настройка сетевой инфраструктуры
-│   ├── 📂 BR                  # Филиал Branch (Филиал Б)
-│   │   ├── 📄 BR-CLI.md       # Рабочая станция филиала (Alt Workstation / CLI)
-│   │   ├── 📄 BR-FW.md        # Межсетевой экран филиала (Ideco NGFW)
-│   │   ├── 📄 BR-RTR.md       # Маршрутизатор филиала (EcoRouter)
-│   │   └── 📄 BR-SRV          # Сервер филиала (Alt Server)
-│   └── 📂 HQ                  # Центральный офис Headquarter (HQ)
-│       ├── 📄 HQ-CLI.md       # Клиентская машина офиса
-│       ├── 📄 HQ-RTR.md       # Центральный маршрутизатор (EcoRouter)
-│       ├── 📄 HQ-SRV.md       # Центральный сервер (Alt Server)
-│       └── 📄 HQ-SW.md        # Коммутатор ядра (Open vSwitch)
-├── 📄 ISP.md                  # Интернет-провайдер (маршрутизация, NAT, Reverse Proxy)
-├── 📄 LICENSE                 # Лицензия Apache-2.0
-├── 📄 Module-1(fast).md       # Шпаргалка: Модуль 1 «только команды» для быстрой вставки
-├── 📄 Module-1(main).md       # Подробный пошаговый разбор Модуля 1 с пояснениями
-├── 📄 Module-2(fast).md       # Шпаргалка: Модуль 2 «только команды» (сервисы и автоматизация)
-├── 📄 Module-2(main).md       # Подробный разбор конфигураций Модуля 2
-├── 📄 Pre-settings.md         # Предварительная подготовка и базовая инициализация систем
-└── 📄 README.md               # Главная страница описания
-```
+demo-exam-tutorial/ <br>
+&nbsp;&nbsp;├── Module-1/ <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── BR/ <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── [BR-CLI.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-CLI.md) <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── [BR-FW.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-FW.md) <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── [BR-RTR.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-RTR.md) <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── [BR-SRV.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-SRV.md) <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── HQ/ <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── [HQ-CLI.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/HQ/HQ-CLI.md) <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── [HQ-RTR.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/HQ/HQ-RTR.md) <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── [HQ-SRV.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/HQ/HQ-SRV.md) <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── [HQ-SW.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/HQ/HQ-SW.md) <br>
+&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── [ISP.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/ISP.md) <br>
+&nbsp;&nbsp;│ <br>
+&nbsp;&nbsp;├── [LICENSE](https://github.com/dowerp/demo-exam-tutorial/blob/main/LICENSE) <br>
+&nbsp;&nbsp;├── [Module-1(fast).md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1%28fast%29.md) <br>
+&nbsp;&nbsp;├── [Module-1(main).md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1%28main%29.md) <br>
+&nbsp;&nbsp;├── [Module-2(fast).md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-2%28fast%29.md) <br>
+&nbsp;&nbsp;├── [Module-2(main).md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-2%28main%29.md) <br>
+&nbsp;&nbsp;├── [Pre-settings.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Pre-settings.md) <br>
+&nbsp;&nbsp;└── [README.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/README.md)

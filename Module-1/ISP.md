@@ -33,8 +33,16 @@ vim +10 /etc/net/sysctl.conf
 ip -br a
 ```
 ens3 получает IP по DHCP от провайдера, если его нет то переходим к настройке [ens3](https://github.com/dowerp/demo-exam-tutorial/edit/main/Module-1/ISP.md#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-ens3)
+для ens4/5 мы делаем следущее
+```bash
+mkdir /etc/net/ifaces/ens4
+mkdir /etc/net/ifaces/ens5
+cp /etc/net/ifaces/ens3/options /etc/net/ifaces/ens4/
+cp /etc/net/ifaces/ens3/options /etc/net/ifaces/ens5/
+```
+mkdir
 ### Настройка ens3
-#### Файл options
+#### Меняем файл options
 ```bash
 vim /etc/net/ifaces/ens3/options
 ```
@@ -51,11 +59,6 @@ SYSTEMD_CONTROLLED=no
 ```
 ### Настройка ens4
 #### Файл options
-Копируем файл options из каталога ens3
-```bash
-mkdir /etc/net/ifaces/ens4
-cp /etc/net/ifaces/ens3/options /etc/net/ifaces/ens4/
-```
 Содержимое options
 ```text
 TYPE=eth
@@ -73,11 +76,6 @@ SYSTEMD_CONTROLLED=no
 ```
 ### Настройка ens5
 #### Файл options
-Копируем options из каталога ens3
-```bash
-mkdir /etc/net/ifaces/ens5
-cp /etc/net/ifaces/ens3/options /etc/net/ifaces/ens5/
-```
 Содержимое options
 ```text
 TYPE=eth

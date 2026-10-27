@@ -45,19 +45,19 @@ port ge1
  service-instance ge1/vl100
   encapsulation dot1q 100 exact
   rewrite pop 1
-  connect ip interface vlan100
+  connect ip interface vl100
  exit
 
  service-instance ge1/vl200
   encapsulation dot1q 200 exact
   rewrite pop 1
-  connect ip interface vlan200
+  connect ip interface vl200
  exit
 
  service-instance ge1/vl999
   encapsulation dot1q 999 exact
   rewrite pop 1
-  connect ip interface vlan999
+  connect ip interface vl999
  end
 wr
 ```

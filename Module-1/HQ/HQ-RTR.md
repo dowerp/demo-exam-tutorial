@@ -165,3 +165,5 @@ show ip nat translations // Просмотр таблицы активных т�
 show dhcp-server 1 detailed (или 2)// Проверка параметров встроенного сервера DHCP
 ```
 # Всегда сохраняем настройки end > wr
+
+Переходим к [BR-RTR](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-RTR.md#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-br-rtr) 

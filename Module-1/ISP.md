@@ -105,3 +105,5 @@ systemctl enable --now iptables
 iptables -t nat -L
 ```
 # Обязательно в конце пишем systemctl restart network
+
+Переходим к [HQ-RTR](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/HQ/HQ-RTR.md#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-hq-rtr)

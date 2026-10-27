@@ -6,7 +6,7 @@
 ```bash
 hostnamectl set-hostname isp.au-team.irpo
 exec bash
-```
+```sh 
 
 ## 2. Настройка времени
 ```bash

@@ -7,6 +7,11 @@ exec bash
 ```
 
 ## 2. Настройка IP-адреса 
+Проверка IP, он должен получать его по dhcp
+```bash
+ip -br a
+```
+Если ip нет, то  
 ```bash
 echo "10.10.100.2/27" > /etc/net/ifaces/ens3/ipv4address
 echo "default via 10.10.100.1" > /etc/net/ifaces/ens3/ipv4route
@@ -19,4 +24,4 @@ systemctl restart network
 ```
 (можно через vim по тем же путям)
 
-## 3.
+## 3. 

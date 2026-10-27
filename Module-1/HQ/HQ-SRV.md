@@ -24,4 +24,79 @@ systemctl restart network
 ```
 (можно через vim по тем же путям)
 
-## 3. 
+## 3. Настройка учетной записи
+```bash
+useradd -m -u 2026 -s /bin/bash sshuser
+useradd -m -u 1025 -s /bin/bash sshadmin
+usermpd -aG wheel sshuser
+```
+### Проверяем добавились ли они командами
+```bash:
+vim /etc/passwd \ проверяем в конце добавленных юзеров
+vim /etc/group \ в группе wheel проверяем
+### Раскомментировать sudoers
+```bash
+vim +123 /etc/sudoers \ убрать # у WHEEL_USERS ALL=(ALL:ALL) NOPASSWD:ALL
+```
+
+## 4. Настройка SSH
+### Ставим ограничение 
+```bash
+vim +34 /etc/openssh/sshd_config \ убрать # и поставить цифру 2
+```
+### Указываем banner
+```bash
+vim +105 /etc/openssh/sshd_config \ убрать # и вместо none ставим /etc/openssh/banner
+```
+### Конфигурация banner
+```bash
+vim /etc/openssh/banner \ вносим Authorized access only
+```
+## 5. Настройка DNS
+```bash
+vim /etc/bind/options.conf
+```
+### Меняем listen-on, forwaders и allow-query
+```text
+options {
+        version "unknown";
+        directory "/etc/bind/zone";
+        dump-file "/var/run/named/named_dump.db";
+        statistics-file "/var/run/named/named.stats";
+        recursing-file "/var/run/named/named.recursing";
+        secroots-file "/var/run/named/named.secroots";
+
+        // disables the use of a PID file
+        pid-file none;
+
+        /*
+         * Oftenly used directives are listed below.
+         */
+
+        listen-on { 127.0.0.1; };
+        listen-on-v6 { ::1; };
+
+        /*
+         * If the forward directive is set to "only", the server will only
+         * query the forwarders.
+         */
+        //forward only;
+        //forwarders { };
+
+        /*
+         * Specifies which hosts are allowed to ask ordinary questions.
+         */
+        //allow-query { localnets; };
+
+        /*
+         * This lets "allow-query" be used to specify the default zone access
+         * level rather than having to have every zone override the global
+         * value. "allow-query-cache" can be set at both the options and view
+         * levels. If "allow-query-cache" is not set then "allow-recursion" is
+         * used if set, otherwise "allow-query" is used if set unless
+         * "recursion no;" is set in which case "none;" is used, otherwise the
+         * default (localhost; localnets;) is used.
+         */
+        //allow-query-cache { localnets; };
+```
+

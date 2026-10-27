@@ -69,7 +69,7 @@ ip pool VLAN100 10.10.100.2-10.10.100.254
 dhcp-server 1
 pool VLAN100 1
 mask 24
-gateway 10.10.200.1
+gateway 10.10.100.1
 dns 10.10.100.1
 domain-name au-team.irpo
 exit

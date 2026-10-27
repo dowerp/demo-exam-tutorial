@@ -16,6 +16,7 @@ systemctl restart network
 
 ### Конфигурация 
 ```bash
+ovs-vsctl add-br SW
 ovs-vsctl add-port SW ens3 trunk=100,200,999
 ovs-vsctl add-port SW ens4 tag=100
 ovs-vsctl add-port SW ens5 tag=200

@@ -31,7 +31,7 @@ wr
 ```
 interface fw
 description "br-fw"
-ip address !!!!
+ip address 10.20.10.1/30
 end
 wr
 ```

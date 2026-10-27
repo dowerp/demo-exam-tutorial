@@ -62,28 +62,11 @@ port ge1
 wr
 ```
 ## 3. Настройка DHCP-server
-### DHCP для VLAN100
-```bash
-conf t
-ip pool VLAN100 10.10.100.2-10.10.100.254
-dhcp-server 1
-pool VLAN100 1
-mask 24
-gateway 10.10.100.1
-dns 10.10.100.1
-domain-name au-team.irpo
-exit
-exit
-interface vl100
-dhcp-server 1
-end
-wr
-```
 ### DHCP для VLAN200
 ```bash
 conf t
 ip pool VLAN200 10.10.200.2-10.10.200.254
-dhcp-server 2
+dhcp-server 1
 pool VLAN200 1
 mask 24
 gateway 10.10.200.1

@@ -34,7 +34,7 @@ ip link set dev ens5 up
 ```bash
 ovs-vsctl add-port SW mgmt999 tag=999 -- set interface mgmt999 type=internal
 ip link set dev mgmt999 up
-ip addr add 192.168.99.2/24 dev mgmt999
+ip addr add 10.10.10.2/24 dev mgmt999
 ```
 
 

@@ -65,8 +65,7 @@ vim /etc/bind/options.conf
 
 
 <details>
-<summary>
-(### Меняем listen-on, forwaders и allow-query
+<summary> ### Меняем listen-on, forwaders и allow-query </summary>
 ```text
 options {
         version "unknown";
@@ -109,7 +108,6 @@ options {
          */
         //allow-query-cache { localnets; };
 ```
-)
 </details>
 [BR-CLI.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-CLI.md) <br>
 [BR-FW.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-FW.md) <br>

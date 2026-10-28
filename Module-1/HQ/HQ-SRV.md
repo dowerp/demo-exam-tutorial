@@ -51,12 +51,21 @@ vim +105 /etc/openssh/sshd_config \ убрать # и вместо none став
 ### Конфигурация banner
 ```bash
 vim /etc/openssh/banner \ вносим Authorized access only
+systemctl restart network
 ```
 ## 5. Настройка DNS
+### Установка bind(если его нет)
+```bash
+apt-get install bind
+```
+### Заходим в настройки bind
 ```bash
 vim /etc/bind/options.conf
 ```
-### Меняем listen-on, forwaders и allow-query
+
+
+
+(### Меняем listen-on, forwaders и allow-query
 ```text
 options {
         version "unknown";
@@ -99,7 +108,7 @@ options {
          */
         //allow-query-cache { localnets; };
 ```
-
+)
 [BR-CLI.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-CLI.md) <br>
 [BR-FW.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-FW.md) <br>
 [BR-RTR.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-RTR.md) <br>

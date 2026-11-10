@@ -36,7 +36,10 @@ ovs-vsctl add-port SW mgmt999 tag=999 -- set interface mgmt999 type=internal
 ip link set dev mgmt999 up
 ip addr add 10.10.10.2/24 dev mgmt999
 ```
-
+### Проверка
+```text
+ovs-vsctl show
+```
 
 
 [BR-CLI.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/BR/BR-CLI.md) <br>
@@ -47,3 +50,4 @@ ip addr add 10.10.10.2/24 dev mgmt999
 [HQ-RTR.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/HQ/HQ-RTR.md) <br>
 [HQ-SRV.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/HQ/HQ-SRV.md) <br>
 [ISP.md](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-1/ISP.md) <br>
+

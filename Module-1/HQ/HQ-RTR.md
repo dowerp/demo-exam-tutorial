@@ -75,7 +75,7 @@ domain-name au-team.irpo
 exit
 exit
 interface vl200
-dhcp-server 2
+dhcp-server 1
 end
 wr
 ```

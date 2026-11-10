@@ -106,6 +106,40 @@ options {
          */
         //allow-query-cache { localnets; };
 ```
+### Вносим зоны
+```bash
+vim /etc/bind/local.conf
+```
+Содержимое:
+```text
+include "/etc/bind/rfc1912.conf";
+
+// Consider adding the 1918 zones here,
+// if they are not used in your organization.
+//      include "/etc/bind/rfc1918.conf";
+
+// Add other zones here
+zone "au-team.irpo" {
+        type master;
+        file "au-team.irpo.zone";
+};
+
+zone "10.10.in-addr.arpa" {
+        type master;
+        file "10.10.in-addr.arpa";
+};
+```
+### Создание файлов зон
+```bash
+touch /etc/bind/zone/au-team.irpo.zone
+touch /etc/bind/zone/10.10.in-addr.arpa
+```
+### Назначение прав
+```bash
+chown root:named /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/10.10.in-addr.arpa
+chmod 640 /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/10.10.in-addr.arpa
+```
+
 ### Меняем настройки зоны
 ```
 /etc/bind/zone/au-team.irpo.zone

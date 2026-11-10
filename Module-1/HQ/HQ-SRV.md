@@ -87,13 +87,13 @@ options {
          * If the forward directive is set to "only", the server will only
          * query the forwarders.
          */
-        //forward only;
-        //forwarders { 77.88.8.8; }
+        forward only;
+        forwarders { 77.88.8.8; }
 
         /*
          * Specifies which hosts are allowed to ask ordinary questions.
          */
-        //allow-query { any; };
+        allow-query { any; };
 
         /*
          * This lets "allow-query" be used to specify the default zone access

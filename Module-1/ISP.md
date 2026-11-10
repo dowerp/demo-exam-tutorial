@@ -40,7 +40,7 @@ mkdir /etc/net/ifaces/ens5
 cp /etc/net/ifaces/ens3/options /etc/net/ifaces/ens4/
 cp /etc/net/ifaces/ens3/options /etc/net/ifaces/ens5/
 ```
-mkdir
+
 ### Настройка ens3
 #### Меняем файл options
 ```bash
@@ -71,8 +71,11 @@ NM_CONTROLLED=no
 SYSTEMD_CONTROLLED=no
 ```
 #### Файл ipv4address 
+vim /etc/net/ifaces/ens4/ipv4address
 ```text
 172.16.1.1/28
+#можно через echo(без vim)
+echo "172.16.1.1" > /etc/net/ifaces/ens4/ipv4address
 ```
 ### Настройка ens5
 #### Файл options
@@ -88,8 +91,11 @@ NM_CONTROLLED=no
 SYSTEMD_CONTROLLED=no
 ```
 #### Файл ipv4address
+vim /etc/net/ifaces/ens5/ipv4address
 ```text
 172.16.2.1/28
+#можно через echo(без vim)
+echo "172.16.2.1" > /etc/net/ifaces/ens5/ipv4address
 ```
 
 ## 4. Настройка iptables

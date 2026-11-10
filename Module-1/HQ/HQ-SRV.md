@@ -28,7 +28,7 @@ systemctl restart network
 ```bash
 useradd -m -u 2026 -s /bin/bash sshuser
 useradd -m -u 1025 -s /bin/bash sshadmin
-usermpd -aG wheel sshuser
+usermod -aG wheel sshuser
 ```
 ### Проверяем добавились ли они командами
 ```bash:

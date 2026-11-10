@@ -68,7 +68,7 @@ conf t
 ip pool VLAN200 10.10.200.2-10.10.200.254
 dhcp-server 1
 pool VLAN200 1
-mask 24
+mask 28
 gateway 10.10.200.1
 dns 10.10.100.2
 domain-name au-team.irpo

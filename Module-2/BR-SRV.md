@@ -119,7 +119,10 @@ samba-tool group show br
 ```bash
 apt-get update && apt-get install -y task-auth-ad-sssd
 ```
+Нажимаем внизу справа на подключения правой кнопкой -> Проводное подключение 1 -> снизу шестерёнка -> параметры IPv4 -> меняем на "Вручную" и там вводим со скрина
+<img width="955" height="647" alt="image" src="https://github.com/user-attachments/assets/8b663ba3-b193-4c1c-8109-3b1fc953e7e9" />
 
 Заходим во ВСЕ ПРИЛОЖЕНИЯ и ищем ЦЕНТР УПРАВЛЕНИЯ СИСТЕМОЙ, там переходим в АУТЕНТИФИКАЦИЯ, выбираем Active Directory через SSSD
 
+<img width="1146" height="859" alt="image" src="https://github.com/user-attachments/assets/4846506c-c3a0-42ed-9509-f73ca5b4d158" />
 

@@ -124,9 +124,14 @@ zone "au-team.irpo" {
         file "au-team.irpo.zone";
 };
 
-zone "10.10.in-addr.arpa" {
+zone "100.10.10.in-addr.arpa" {
         type master;
-        file "10.10.in-addr.arpa";
+        file "100.10.10.in-addr.arpa";
+};
+
+zone "200.10.10.in-addr.arpa" {
+        type master;
+        file "200.10.10.in-addr.arpa";
 };
 ```
 ### Создание файлов зон

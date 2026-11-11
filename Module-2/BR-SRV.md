@@ -30,7 +30,7 @@ mkdir -p /var/lib/samba/sysvol
 </details>
 <img width="765" height="153" alt="image" src="https://github.com/user-attachments/assets/cabb28d1-ad0d-473b-b315-3aebeb95278f" />
 
-Везде про пароля жмем энтер
+Везде кроме пароля жмем энтер
 * Если не грузит изображение там:
 
 ```bash
@@ -43,7 +43,17 @@ DNS forwarder IP address (write 'none' to disable forwarding): 192.168.100.2
 Administrator password:
 Retype password: 
 ```
+После создания домена необходимо внести изменения в файл /etc/krb5.conf. В этом файле
+следует раскомментировать строку default_realm и содержимое разделов realms и
+domain_realm, указать название домена (обратите внимание на регистр символов), в строке
+dns_lookup_realm должно быть установлено значение false. В момент создания домена Samba
+конфигурирует шаблон файла krb5.conf для домена в каталоге /var/lib/samba/private/. Можно
+просто заменить этим файлом файл, находящийся в каталоге /etc/:
 
+```bash
+cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
+```
+Вклю
 ### Ввод в состав домена
 
 ### Создание групп

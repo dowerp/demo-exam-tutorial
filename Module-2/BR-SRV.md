@@ -4,7 +4,7 @@
 
 ### Установка
 ```bash
-apt-get update && apt-get install -y task-samba-dc
+apt-get update && apt-get install -y task-samba-dc && apt-get install -y bind-utils
 ```
 
 
@@ -107,9 +107,19 @@ samba-tool group addmembers «hq» hquser1
 ### Проверка
 ```bash
 samba-tool group list | grep hq
+samba-tool group list | grep br
 # или
 samba-tool group show hq
+samba-tool group show br
 ```
 
+## Введение в домен HQ-CLI
+
+### Установка SSSD
+```bash
+apt-get update && apt-get install -y task-auth-ad-sssd
+```
+
+Заходим во ВСЕ ПРИЛОЖЕНИЯ ищем 
 
 

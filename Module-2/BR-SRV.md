@@ -6,6 +6,12 @@
 ```bash
 apt-get update && apt-get install -y task-samba-dc
 ```
+
+
+### Развертывание домена
+```bash
+samba-tool domain provision
+```
 <details>
   <summary>Если настройка домена выполняется не сразу после установки ОС, перед установкой
 необходимо остановить конфликтующие службы krb5kdc и slapd, а также bind</summary>
@@ -21,8 +27,6 @@ rm -rf /var/cache/samba
 mkdir -p /var/lib/samba/sysvol
 ```
 </details>
-
-### Развертывание домена
 
 ### Ввод в состав домена
 

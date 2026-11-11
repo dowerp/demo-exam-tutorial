@@ -1,6 +1,6 @@
 # Настройка BR-SRV
 
-## Настройка Samba-DC
+## Настройка контроллера домена Samba-DC
 
 ### Установка
 ```bash
@@ -31,8 +31,8 @@ mkdir -p /var/lib/samba/sysvol
 <img width="765" height="153" alt="image" src="https://github.com/user-attachments/assets/cabb28d1-ad0d-473b-b315-3aebeb95278f" />
 
 Везде кроме пароля жмем энтер
-* Если не грузит изображение там:
-
+<details>
+<summary> Если не грузит изображение там:</summary>
 ```bash
 [root@br-srv ~]# samba-tool domain provision
 Realm [AU-TEAM.IRPO]:
@@ -43,6 +43,7 @@ DNS forwarder IP address (write 'none' to disable forwarding): 192.168.100.2
 Administrator password:
 Retype password: 
 ```
+</details>
 После создания домена необходимо внести изменения в файл /etc/krb5.conf. В этом файле
 следует раскомментировать строку default_realm и содержимое разделов realms и
 domain_realm, указать название домена (обратите внимание на регистр символов), в строке
@@ -53,12 +54,19 @@ dns_lookup_realm должно быть установлено значение f
 ```bash
 cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 ```
-Вклю
-### Ввод в состав домена
+Включаем службу samba
+```bash
+systemctl enable --now samba
+```
+#### Проверяем
+Общая инфо о домене и службах
+```bash
+samba-tool domain info 127.0.0.1
+```
+<img width="703" height="309" alt="image" src="https://github.com/user-attachments/assets/380ac0b7-15d8-435a-b086-7fe0d68b8469" />
 
-### Создание групп
-
-### Обеспечение возможности входа
-
-### Настройка привилегий 
+```bash
+cat /etc/resolv.conf
+```
+<img width="753" height="295" alt="image" src="https://github.com/user-attachments/assets/4d2f06d3-e6dd-4807-bd57-4d1f34d8e140" />
 

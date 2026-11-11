@@ -81,7 +81,19 @@ host br-srv.au-team.irpo.
 ### Создание групп и пользователей
 ```bash
 samba-tool group add hq
-samba-tool user add hquser1 P@ssw0rd
+samba-tool group add br
+
+for i in {1..5}; do
+  samba-tool user add hquser$i P@ssw0rd
+  samba-tool user setexpiry hquser$i --noexpiry
+  samba-tool group addmembers "hq" hquser$i
+done
+
+for i in {1..5}; do
+  samba-tool user add bruser$i P@ssw0rd
+  samba-tool user setexpiry bruser$i --noexpiry
+  samba-tool group addmembers "br" bruser$i
+done
 ```
 ### Установления неограниченного срока для учетки 
 ```bash

@@ -27,6 +27,8 @@ rm -rf /var/cache/samba
 mkdir -p /var/lib/samba/sysvol
 ```
 </details>
+<img width="765" height="153" alt="image" src="https://github.com/user-attachments/assets/cabb28d1-ad0d-473b-b315-3aebeb95278f" />
+
 
 ### Ввод в состав домена
 

@@ -28,7 +28,18 @@ mkdir -p /var/lib/samba/sysvol
 ```
 </details>
 <img width="765" height="153" alt="image" src="https://github.com/user-attachments/assets/cabb28d1-ad0d-473b-b315-3aebeb95278f" />
-
+Везде про пароля жмем энтер
+Если не грузит изображение там:
+```bash
+[root@br-srv ~]# samba-tool domain provision
+Realm [AU-TEAM.IRPO]:
+Domain [AU-TEAM]:
+Server Role (dc, member, standalone) [dc]:
+DNS backend (SAMBA_INTERNAL, BIND9_FLATFILE, BIND9_DLZ, NONE) [SAMBA_INTERNAL]:
+DNS forwarder IP address (write 'none' to disable forwarding): 192.168.100.2
+Administrator password:
+Retype password: _
+```
 
 ### Ввод в состав домена
 

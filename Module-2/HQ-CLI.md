@@ -15,3 +15,28 @@ apt-get update && apt-get install -y task-auth-ad-sssd
 
 
 Нажимаем применить и вводим пароль домены, который вводили при настройки Samba DC
+
+### Установка библиотеки libnss-role для NSS
+```bash
+apt-get install -y libnss-role
+```
+проверяем состояние, должен быть enabled
+```bash
+control libnss-role
+```
+
+Связываем доменную группу hq с локальной wheel
+```bash
+roleadd hq wheel
+```
+
+Раскомментировать WHEEL
+```bash
+vim +120 /etc/sudoers
+```
+
+Дать права в том же файл перед Cmnd_Alias  PROCESSES
+```bash
+Cmnd_Alias  SHELLCMD = /bin/cat, /bin/grep, /usr/bin/id
+```
+### Чтобы проверить надо выйти из актуальной учетки и зайти в HQ-CLI

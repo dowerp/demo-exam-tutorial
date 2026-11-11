@@ -140,39 +140,70 @@ chown root:named /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/10.10.in-addr.a
 chmod 640 /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/10.10.in-addr.arpa
 ```
 
-### Меняем настройки зоны
+### Меняем настройки зон
+Общая зона
 ```
 /etc/bind/zone/au-team.irpo.zone
 ```
 
 ```
-$TTL 86400
-@   IN  SOA hq-srv.au-team.irpo. root.au-team.irpo. ( // SOA-запись зоны прямого просмотра
-            2024010101 3600 1800 604800 86400 ) // Серийный номер и таймеры зоны
-    IN  NS  hq-srv.au-team.irpo. // NS-запись авторитетного сервера
+$TTL    1D
+@       IN      SOA     au-team.irpo. root.au-team.irpo. (
+                        2025110600      ; serial
+                        12H             ; refresh
+                        1H              ; retry
+                        1W              ; expire
+                        1H              ; ncache
+                        )
+        IN      NS      au-team.irpo.
+        IN      A       10.10.100.2
+br-fw   IN      A       10.10.30.10
+hq-rtr  IN      A       10.10.100.1
+hq-rtr  IN      A       10.10.200.1
+hq-rtr  IN      A       10.10.30.1
+br-rtr  IN      A       10.10.30.9
+hq-srv  IN      A       10.10.100.2
+hq-cli  IN      A       10.10.200.2
+br-srv  IN      A       10.20.20.2
+br-cli  IN      A       10.20.30.2
+docker  IN      A       172.16.1.1
+docker  IN      A       172.16.2.1
+web     IN      A       172.16.1.1
+web     IN      A       172.16.2.1
+```
+Обратная зона HQ-SRV
+```
+/etc/bind/zone/100.10.10.in-addr.arpa
+```
 
-hq-rtr  IN  A   172.16.1.2 // A-запись маршрутизатора HQ-RTR
-br-rtr  IN  A   172.16.2.2 // A-запись маршрутизатора BR-RTR
-hq-srv  IN  A   10.10.100.2 // A-запись сервера HQ-SRV
-hq-cli  IN  A   10.10.200.2 // A-запись рабочей станции HQ-CLI
-br-srv  IN  A   10.20.20.2 // A-запись сервера BR-SRV
-br-cli  IN  A   10.20.30.2 // A-запись рабочей станции BR-CLI
-br-fw   IN  A   10.20.10.2 // A-запись межсетевого экрана BR-FW
-web     IN  A   172.16.1.1 // A-запись внешнего интерфейса ISP (к HQ)
-docker  IN  A   172.16.2.1 // A-запись внешнего интерфейса ISP (к BR)
 ```
-```
-/etc/bind/zone/10.10.in-addr.arpa
-```
-```
-$TTL 1D
-@   IN  SOA au-team.irpo. root.au-team.irpo. ( // SOA-запись зоны обратного просмотра
-            2025110600 12H 1H 1W 1H ) // Серийный номер и таймеры
-    IN  NS  au-team.irpo. // NS-запись зоны
+$TTL    1D
+@       IN      SOA     au-team.irpo. root.au-team.irpo. (
+                        2025110600      ; serial
+                        12H             ; refresh
+                        1H              ; retry
+                        1W              ; expire
+                        1H              ; ncache
+                        )
+        IN      NS      au-team.irpo.
+2       IN      PTR     hq-srv.au-team.irpo.
+1       IN      PTR     hq-rtr.au-team.irpo.
 
-1.100   IN  PTR hq-rtr.au-team.irpo. // PTR-запись адреса 10.10.100.1
-2.100   IN  PTR hq-srv.au-team.irpo. // PTR-запись адреса 10.10.100.2
-2.200   IN  PTR hq-cli.au-team.irpo. // PTR-запись адреса 10.10.200.2
+```
+Обратная зона HQ-CLI
+```text
+$TTL    1D
+@       IN      SOA     au-team.irpo. root.au-team.irpo. (
+                        2025110600      ; serial
+                        12H             ; refresh
+                        1H              ; retry
+                        1W              ; expire
+                        1H              ; ncache
+                        )
+        IN      NS      au-team.irpo.
+2       IN      PTR     hq-cli.au-team.irpo.
+1       IN      PTR     hq-rtr.au-team.irpo.
+
 ```
 ### Запускаем DNS
 

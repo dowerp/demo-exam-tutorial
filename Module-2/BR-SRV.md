@@ -15,7 +15,10 @@ for service in smb nmb krb5kdc slapd bind; do \
 systemctl disable $service; \
 systemctl stop $service; \
 done
-
+rm -f /etc/samba/smb.conf
+rm -rf /var/lib/samba
+rm -rf /var/cache/samba
+mkdir -p /var/lib/samba/sysvol
 ```
 </details>
 

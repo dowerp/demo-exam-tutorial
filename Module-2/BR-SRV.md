@@ -30,20 +30,8 @@ mkdir -p /var/lib/samba/sysvol
 </details>
 <img width="765" height="153" alt="image" src="https://github.com/user-attachments/assets/cabb28d1-ad0d-473b-b315-3aebeb95278f" />
 
-Везде кроме пароля жмем энтер
-<details>
-<summary> Если не грузит изображение там:</summary>
-```bash
-[root@br-srv ~]# samba-tool domain provision
-Realm [AU-TEAM.IRPO]:
-Domain [AU-TEAM]:
-Server Role (dc, member, standalone) [dc]:
-DNS backend (SAMBA_INTERNAL, BIND9_FLATFILE, BIND9_DLZ, NONE) [SAMBA_INTERNAL]:
-DNS forwarder IP address (write 'none' to disable forwarding): 192.168.100.2
-Administrator password:
-Retype password: 
-```
-</details>
+#### Везде кроме пароля жмем энтер
+
 После создания домена необходимо внести изменения в файл /etc/krb5.conf. В этом файле
 следует раскомментировать строку default_realm и содержимое разделов realms и
 domain_realm, указать название домена (обратите внимание на регистр символов), в строке
@@ -58,7 +46,7 @@ cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 ```bash
 systemctl enable --now samba
 ```
-#### Проверяем
+### Проверяем
 Общая инфо о домене и службах
 ```bash
 samba-tool domain info 127.0.0.1
@@ -69,4 +57,47 @@ samba-tool domain info 127.0.0.1
 cat /etc/resolv.conf
 ```
 <img width="753" height="295" alt="image" src="https://github.com/user-attachments/assets/4d2f06d3-e6dd-4807-bd57-4d1f34d8e140" />
+
+Проверяем конфигурации DNS
+```bash
+host au-team.irpo
+```
+
+```bash
+host -t SRV _kerberos._udp.au-team.irpo.
+```
+
+```bash
+host -t SRV _ldap._tcp.au-team.irpo.
+```
+
+```bash
+host br-srv.au-team.irpo.
+```
+
+<img width="546" height="145" alt="image" src="https://github.com/user-attachments/assets/115d7f7b-afc5-4194-bac2-bc5a665bfd9d" />
+
+## Настройка пользовательской структуры домена
+### Создание групп и пользователей
+```bash
+samba-tool group add hq
+samba-tool user add hquser1 P@ssw0rd
+```
+### Установления неограниченного срока для учетки 
+```bash
+samba-tool user setexpiry hquser1 --noexpiry
+```
+### Добавление пользователя
+```bash
+samba-tool group addmembers «hq» hquser1
+```
+
+### Проверка
+```bash
+samba-tool group list | grep hq
+# или
+samba-tool group show hq
+```
+
+
 

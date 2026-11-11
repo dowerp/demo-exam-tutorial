@@ -120,6 +120,6 @@ samba-tool group show br
 apt-get update && apt-get install -y task-auth-ad-sssd
 ```
 
-Заходим во ВСЕ ПРИЛОЖЕНИЯ ищем 
+Заходим во ВСЕ ПРИЛОЖЕНИЯ и ищем ЦЕНТР УПРАВЛЕНИЯ СИСТЕМОЙ, там переходим в АУТЕНТИФИКАЦИЯ, выбираем Active Directory через SSSD
 
 

@@ -59,7 +59,7 @@ chmod -R 777 /mnt/nfs
 Дописываем строку
 ```bash
 vim /etc/fstab
-echo "10.10.100.2:/raid/nfs /mnt/nfs nfs defaults 0 0" >> /etc/fstab
+10.10.100.2:/raid/nfs  /mnt/nfs  nfs  defaults  0  0
 ```
 Применяем
 ```bash

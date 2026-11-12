@@ -114,3 +114,55 @@ samba-tool group show br
 ```
 Чуток настроить надо на [HQ-CLI](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-2/HQ-CLI.md)
 
+## Продолжаем 
+## Настройка Ansible
+
+### Установка
+```bash
+apt-get update && apt-get install –y ansible sshpass
+```
+
+### Редактирование файлов хостов и конфигурации
+#### Хосты
+```bash
+vim /etc/ansible/hosts
+```
+Содержимое сделать таким:
+```text
+[hq]
+hq-srv ansible_host=10.10.100.2 ansible_port=2026 ansible_ssh_user=root ansible_ssh_pass=toor
+hq-cli ansible_host=10.10.200.2 ansible_port=22 ansible_ssh_user=root ansible_ssh_pass=toor
+hq-rtr ansible_host=172.16.1.2 ansible_port=22 ansible_ssh_user=net_admin ansible_ssh_pass=P@ssword ansible_connection=network_cli ansible_network_os=ios
+
+[br]
+br-rtr ansible_host=172.16.2.2 ansible_port=22 ansible_ssh_user=net_admin ansible_ssh_pass=P@ssword ansible_connection=network_cli ansible_network_os=ios
+br-cli ansible_host=10.20.30.2 ansible_port=22 ansible_ssh_user=root ansible_ssh_pass=toor
+```
+
+#### Конфигурация
+```bash
+vim /etc/ansible/ansible.cfg
+```
+Содержимое
+
+<img width="753" height="162" alt="image" src="https://github.com/user-attachments/assets/3a4aa94e-ab34-46a1-a572-0f4fb257f386" />
+
+
+### Установить коллекции для подключения к EcoRouter
+
+```bash
+ansible-galaxy collection install ansible.netcommon
+ansible-galaxy collection install cisco.ios
+```
+
+### Установка других пакетов и библиотеки ansible
+
+```bash
+apt-get install –y python3-module-pip
+pip3 install ansible-pylibssh
+```
+
+
+
+
+

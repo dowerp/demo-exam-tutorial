@@ -112,5 +112,5 @@ samba-tool group list | grep br
 samba-tool group show hq
 samba-tool group show br
 ```
-Чуток настроить надо на [HQ-CLI](https://github.com/dowerp/demo-exam-tutorial/edit/main/Module-2/HQ-CLI)
+Чуток настроить надо на [HQ-CLI](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-2/HQ-CLI.md)
 

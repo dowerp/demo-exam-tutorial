@@ -13,5 +13,34 @@ apt-get install -y mdadm
 ```
 ### Создание RAID-массива с mdadm
 ```bash
-mdadm --create --verbose /devmd0 –l 0 -n 2 /dev/sdb /dev/sdc
+mdadm --create --verbose /devmd0 –l 0 -n 2 /dev/vdb /dev/vdc
 ```
+Создаем файловую систему на созданном RAID-массиве
+```bash
+mkfs.ext4 /dev/md0
+```
+Создаем новую директорию
+```bash
+mkdir /raid
+```
+Применяем монтирования
+```bash
+mount -av
+```
+Проверяем
+```bash
+lsblk
+```
+<img width="755" height="247" alt="image" src="https://github.com/user-attachments/assets/47c0f0b4-f671-401c-842d-72caaa689805" />
+
+```bash
+blkid
+```
+<img width="758" height="62" alt="image" src="https://github.com/user-attachments/assets/1f692276-e353-45aa-80b5-4646b237e435" />
+```bash
+df -h
+```
+<img width="516" height="217" alt="image" src="https://github.com/user-attachments/assets/f9226493-1ac2-42f3-8519-32d3fd77e84a" />
+
+## Настройка 
+

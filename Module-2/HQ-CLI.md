@@ -35,7 +35,7 @@ roleadd hq wheel
 vim +120 /etc/sudoers
 ```
 
-Дать права в том же файл перед Cmnd_Alias  PROCESSES vim +32 /etc/sudoers
+Дать права в том же файл перед Cmnd_Alias  PROCESSES
 ```bash
 Cmnd_Alias  SHELLCMD = /bin/cat, /bin/grep, /usr/bin/id
 ```
@@ -45,3 +45,25 @@ Cmnd_Alias  SHELLCMD = /bin/cat, /bin/grep, /usr/bin/id
 
 
 ## Пришли сюда от HQ-SRV и пока тут продолжаем 
+```bash
+apt-get install –y nfs-utils nfs-clients
+```
+Создать директорию для монтирования общего ресурса
+```bash
+mkdir /mnt/nfs
+```
+Выдаем права
+```bash
+chmod -R 777 /mnt/nfs
+```
+Дописываем строку
+```bash
+vim /etc/fstab
+echo "10.10.100.2:/raid/nfs /mnt/nfs nfs defaults 0 0" >> /etc/fstab
+```
+Применяем
+```bash
+mount -av
+```
+
+

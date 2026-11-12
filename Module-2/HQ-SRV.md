@@ -36,11 +36,22 @@ lsblk
 ```bash
 blkid
 ```
+
 <img width="758" height="62" alt="image" src="https://github.com/user-attachments/assets/1f692276-e353-45aa-80b5-4646b237e435" />
+
 ```bash
 df -h
 ```
 <img width="516" height="217" alt="image" src="https://github.com/user-attachments/assets/f9226493-1ac2-42f3-8519-32d3fd77e84a" />
 
-## Настройка 
+## Настройка сетевой файловой системы 
+### Установка
+```bash
+apt-get install –y nfs-server nfs-utils
+```
+### Создаем директорию для реализации общего доступа
+```bash
+mkdir /raid/nfs
+```
+Выдаем права
 

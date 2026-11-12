@@ -42,3 +42,6 @@ Cmnd_Alias  SHELLCMD = /bin/cat, /bin/grep, /usr/bin/id
 ### Чтобы проверить надо выйти из актуальной учетки и зайти в HQ-CLI и зайти под hquser
 
 Дальше идем к [HQ-SRV](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-2/HQ-SRV.md)
+
+
+## Пришли сюда от HQ-SRV и пока тут продолжаем 

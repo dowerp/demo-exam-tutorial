@@ -18,10 +18,11 @@ mdadm --create --verbose /dev/md0 –l 0 -n 2 /dev/vdb /dev/vdc
 Создаем файловую систему на созданном RAID-массиве
 ```bash
 mkfs.ext4 /dev/md0
+echo "/dev/md0 /raid ext4 defaults 0 0" >> /etc/fstab
 ```
 Создаем новую директорию
 ```bash
-mkdir /raid
+mkdir -p /raid
 ```
 Применяем монтирования
 ```bash

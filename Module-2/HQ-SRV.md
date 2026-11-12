@@ -54,4 +54,13 @@ apt-get install –y nfs-server nfs-utils
 mkdir /raid/nfs
 ```
 Выдаем права
+```bash
+chmod 777 /raid/nfs
+```
+
+### Запускаем сервер
+```bash
+systemctl enable --now nfs-server
+```
+Пока что переходим к [HQ-CLI](https://github.com/dowerp/demo-exam-tutorial/blob/main/Module-2/HQ-CLI.md)
 

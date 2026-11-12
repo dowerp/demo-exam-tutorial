@@ -58,7 +58,13 @@ mkdir /raid/nfs
 ```bash
 chmod 777 /raid/nfs
 ```
-
+Заходим в список экспорта
+```bash
+vim /etc/exports
+```
+В конец вносим
+```text
+/raid/nfs  10.10.200.0/24(rw,no_root_squash)
 ### Запускаем сервер
 ```bash
 systemctl enable --now nfs-server

@@ -37,7 +37,7 @@ vim +120 /etc/sudoers
 
 Дать права в том же файл перед Cmnd_Alias  PROCESSES
 ```bash
-Cmnd_Alias  SHELLCMD = /bin/cat, /bin/grep, /usr/bin/id
+ vim +32 /etc/sudoers Cmnd_Alias  SHELLCMD = /bin/cat, /bin/grep, /usr/bin/id
 ```
 ### Чтобы проверить надо выйти из актуальной учетки и зайти в HQ-CLI и зайти под hquser
 

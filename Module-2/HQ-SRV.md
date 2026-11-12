@@ -13,7 +13,7 @@ apt-get install -y mdadm
 ```
 ### Создание RAID-массива с mdadm
 ```bash
-mdadm --create --verbose /devmd0 –l 0 -n 2 /dev/vdb /dev/vdc
+mdadm --create --verbose /dev/md0 –l 0 -n 2 /dev/vdb /dev/vdc
 ```
 Создаем файловую систему на созданном RAID-массиве
 ```bash

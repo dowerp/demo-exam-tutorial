@@ -10,7 +10,7 @@ exec bash
 ### Активация Open VSwitch
 
 ```bash
-systemctl enable –-now openvswitch
+systemctl enable --now openvswitch
 systemctl restart network
 ```
 

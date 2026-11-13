@@ -1,10 +1,17 @@
 # Настройка HQ-RTR
-## Переходим в привилегированый 
 ## 1. Настройка имени и домена
 ```bash
 conf t
 hostname hq-rtr
 ip domain-name au-team.irpo
+end
+wr
+```
+## Создадим пользователя net_admin(или иной)
+```bash
+username net_admin
+password P@ssw0rd
+role admin
 end
 wr
 ```

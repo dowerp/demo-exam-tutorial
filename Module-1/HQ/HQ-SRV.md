@@ -137,12 +137,15 @@ zone "200.10.10.in-addr.arpa" {
 ### Создание файлов зон
 ```bash
 touch /etc/bind/zone/au-team.irpo.zone
-touch /etc/bind/zone/10.10.in-addr.arpa
+touch /etc/bind/zone/100.10.10.in-addr.arpa
+touch /etc/bind/zone/200.10.10.in-addr.arpa
 ```
 ### Назначение прав
 ```bash
-chown root:named /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/10.10.in-addr.arpa
-chmod 640 /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/10.10.in-addr.arpa
+chown root:named /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/100.10.10.in-addr.arpa
+chmod 640 /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/100.10.10.in-addr.arpa
+chown root:named /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/200.10.10.in-addr.arpa
+chmod 640 /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/200.10.10.in-addr.arpa
 ```
 
 ### Меняем настройки зон

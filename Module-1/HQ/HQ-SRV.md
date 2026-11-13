@@ -144,8 +144,8 @@ touch /etc/bind/zone/200.10.10.in-addr.arpa
 ```bash
 chown root:named /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/100.10.10.in-addr.arpa
 chmod 640 /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/100.10.10.in-addr.arpa
-chown root:named /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/200.10.10.in-addr.arpa
-chmod 640 /etc/bind/zone/au-team.irpo.zone /etc/bind/zone/200.10.10.in-addr.arpa
+chown root:named /etc/bind/zone/200.10.10.in-addr.arpa
+chmod 640 /etc/bind/zone/200.10.10.in-addr.arpa
 ```
 
 ### Меняем настройки зон

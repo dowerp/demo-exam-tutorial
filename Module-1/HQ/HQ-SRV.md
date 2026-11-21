@@ -54,8 +54,9 @@ vim /etc/openssh/banner \ вносим Authorized access only
 systemctl restart network
 ```
 ## 5. Настройка DNS
-### Установка bind(если его нет)
+### Установка bind(если его нет) 
 ```bash
+apt-get update
 apt-get install bind
 ```
 ### Заходим в настройки bind
